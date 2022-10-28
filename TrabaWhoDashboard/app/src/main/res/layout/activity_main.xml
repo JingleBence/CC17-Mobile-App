@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="#D5EFE3"
+    android:id="@+id/drawer_layout"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginBottom="34dp"
+            app:layout_constraintBottom_toTopOf="@+id/searchView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/Hometoolbar"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginBottom="51dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                app:layout_constraintBottom_toTopOf="@+id/searchView"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:logo="@drawable/ic_menu"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView"
+                android:layout_width="71dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="40dp"
+                app:layout_constraintBottom_toTopOf="@+id/searchView"
+                app:layout_constraintEnd_toStartOf="@+id/HomeProfile"
+                app:layout_constraintStart_toEndOf="@+id/Hometoolbar"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:shapeAppearanceOverlay="@style/RoundedSquare"
+                app:srcCompat="@drawable/logo" />
+
+            <ImageView
+                android:id="@+id/HomeProfile"
+                android:layout_width="98dp"
+                android:layout_height="71dp"
+                android:layout_marginStart="148dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="5dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.008"
+                app:srcCompat="@drawable/user" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="124dp"
+            android:background="@drawable/search_view_bg"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.262"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryHint="Search for..." />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextTextPostalAddress"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginBottom="42dp"
+            android:background="@drawable/search_view_bg"
+            android:drawableStart="@drawable/ic_baseline_location_on_24"
+            android:ems="8"
+
+            android:hint="City, State Zip Code"
+            android:inputType="textPostalAddress"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchView"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="#0080A5"
+            android:text="Service Feed"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="#0080A5"
+            android:text="Recent Searches"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/search_view_bg"
+            android:backgroundTint="#B4E8E5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            app:layout_constraintVertical_bias="0.987">
+
+            <ImageView
+                android:id="@+id/homeNotification"
+                android:layout_width="61dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="170dp"
+                android:layout_marginTop="1dp"
+                app:srcCompat="@drawable/ringingbell"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+
+                >
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/Messages"
+                android:layout_width="71dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="98dp"
+                app:srcCompat="@drawable/chatbubble"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+
+                />
+
+            <ImageView
+                android:id="@+id/homeFavorites"
+                android:layout_width="39dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="365dp"
+                android:layout_marginTop="5dp"
+                app:srcCompat="@drawable/heart"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+
+                />
+        </androidx.cardview.widget.CardView>
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="800dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1500dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView"
+                        android:layout_width="381dp"
+                        android:layout_height="200dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="14dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="#7FB3C0"
+                        app:cardCornerRadius="25dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:layout_editor_absoluteY="26dp">
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="66dp"
+                            android:layout_height="56dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            app:srcCompat="@drawable/service" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="70dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Technician"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="70dp"
+                            android:layout_marginTop="23dp"
+                            android:text="Outlet Reapair" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="75dp"
+                            android:layout_marginTop="36dp"
+                            android:text="Baguio City" />
+
+                        <RatingBar
+                            android:id="@+id/ratingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
+                            android:layout_marginTop="36dp"
+                            android:rating="4"
+                            android:scaleX=".4"
+                            android:scaleY=".4"
+
+                            />
+
+                        <Button
+                            android:id="@+id/button3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="-8dp"
+                            android:layout_marginTop="65dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_money"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="Php 100 an hour" />
+
+                        <Button
+                            android:id="@+id/button4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="119dp"
+                            android:layout_marginTop="65dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_money"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="Part-time" />
+
+                        <Button
+                            android:id="@+id/button5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="92dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_back_in_time"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="3 hours" />
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="38dp"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="330dp"
+                            android:layout_marginTop="70dp"
+                            app:srcCompat="@drawable/heart" />
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="135dp"
+                            android:drawableLeft="@drawable/ic_support"
+                            android:text="Service Ongoing" />
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="42dp"
+                            android:layout_marginTop="165dp"
+                            android:drawableLeft="@drawable/ic_tick"
+                            android:text="Available"
+                            android:textColor="#2A9818" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="381dp"
+                        android:layout_height="210dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginEnd="20dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="#7FB3C0"
+                        app:cardCornerRadius="25dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="66dp"
+                            android:layout_height="56dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            app:srcCompat="@drawable/service" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="70dp"
+                            android:text="Technician"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="70dp"
+                            android:layout_marginTop="19dp"
+                            android:text="Appliance Repair" />
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="75dp"
+                            android:layout_marginTop="36dp"
+                            android:text="Baguio City" />
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="38dp"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="330dp"
+                            android:layout_marginTop="70dp"
+                            app:srcCompat="@drawable/heart" />
+
+                        <RatingBar
+                            android:id="@+id/ratingBar3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
+                            android:layout_marginTop="36dp"
+                            android:rating="3"
+                            android:scaleX=".4"
+                            android:scaleY=".4"
+
+                            />
+
+                        <Button
+                            android:id="@+id/button7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="-8dp"
+                            android:layout_marginTop="65dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_money"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="Php 250 and Hour" />
+
+                        <Button
+                            android:id="@+id/button8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="125dp"
+                            android:layout_marginTop="65dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_money"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="Part time" />
+
+                        <Button
+                            android:id="@+id/button9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginTop="92dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_back_in_time"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="Button" />
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="135dp"
+                            android:drawableLeft="@drawable/ic_support"
+                            android:text="Service Ongoing" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="42dp"
+                            android:layout_marginTop="165dp"
+                            android:drawableLeft="@drawable/ic_tick"
+                            android:text="Available"
+                            android:textColor="#2A9818" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="381dp"
+                        android:layout_height="210dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="250dp"
+                        android:layout_marginEnd="20dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="#7FB3C0"
+                        app:cardCornerRadius="25dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="66dp"
+                            android:layout_height="56dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            app:srcCompat="@drawable/service" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="70dp"
+                            android:text="Technician"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="70dp"
+                            android:layout_marginTop="19dp"
+                            android:text="Appliance Repair" />
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="75dp"
+                            android:layout_marginTop="36dp"
+                            android:text="Baguio City" />
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="38dp"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="330dp"
+                            android:layout_marginTop="70dp"
+                            app:srcCompat="@drawable/heart" />
+
+                        <RatingBar
+                            android:id="@+id/ratingBar3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
+                            android:layout_marginTop="36dp"
+                            android:rating="3"
+                            android:scaleX=".4"
+                            android:scaleY=".4"
+
+                            />
+
+                        <Button
+                            android:id="@+id/button7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="-8dp"
+                            android:layout_marginTop="65dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_money"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="Php 250 and Hour" />
+
+                        <Button
+                            android:id="@+id/button8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="125dp"
+                            android:layout_marginTop="65dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_money"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="Part time" />
+
+                        <Button
+                            android:id="@+id/button9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginTop="92dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_back_in_time"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="Button" />
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="135dp"
+                            android:drawableLeft="@drawable/ic_support"
+                            android:text="Service Ongoing" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="42dp"
+                            android:layout_marginTop="165dp"
+                            android:drawableLeft="@drawable/ic_tick"
+                            android:text="Available"
+                            android:textColor="#2A9818" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView12"
+                        android:layout_width="381dp"
+                        android:layout_height="210dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="483dp"
+                        android:layout_marginEnd="20dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="#7FB3C0"
+                        app:cardCornerRadius="25dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="66dp"
+                            android:layout_height="56dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            app:srcCompat="@drawable/service" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="70dp"
+                            android:text="Technician"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="70dp"
+                            android:layout_marginTop="19dp"
+                            android:text="Appliance Repair" />
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="75dp"
+                            android:layout_marginTop="36dp"
+                            android:text="Baguio City" />
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="38dp"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="330dp"
+                            android:layout_marginTop="70dp"
+                            app:srcCompat="@drawable/heart" />
+
+                        <RatingBar
+                            android:id="@+id/ratingBar3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
+                            android:layout_marginTop="36dp"
+                            android:rating="3"
+                            android:scaleX=".4"
+                            android:scaleY=".4"
+
+                            />
+
+                        <Button
+                            android:id="@+id/button7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="-8dp"
+                            android:layout_marginTop="65dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_money"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="Php 250 and Hour" />
+
+                        <Button
+                            android:id="@+id/button8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="125dp"
+                            android:layout_marginTop="65dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_money"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="Part time" />
+
+                        <Button
+                            android:id="@+id/button9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginTop="92dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_back_in_time"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="Button" />
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="135dp"
+                            android:drawableLeft="@drawable/ic_support"
+                            android:text="Service Ongoing" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="42dp"
+                            android:layout_marginTop="165dp"
+                            android:drawableLeft="@drawable/ic_tick"
+                            android:text="Available"
+                            android:textColor="#2A9818" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="381dp"
+                        android:layout_height="210dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_marginBottom="356dp"
+                        app:cardBackgroundColor="#7FB3C0"
+                        app:cardCornerRadius="25dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.25"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView12">
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="66dp"
+                            android:layout_height="56dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            app:srcCompat="@drawable/service" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="70dp"
+                            android:text="Technician"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="70dp"
+                            android:layout_marginTop="19dp"
+                            android:text="Appliance Repair" />
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="75dp"
+                            android:layout_marginTop="36dp"
+                            android:text="Baguio City" />
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="38dp"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="330dp"
+                            android:layout_marginTop="70dp"
+                            app:srcCompat="@drawable/heart" />
+
+                        <RatingBar
+                            android:id="@+id/ratingBar3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="1dp"
+                            android:layout_marginTop="36dp"
+                            android:rating="3"
+                            android:scaleX=".4"
+                            android:scaleY=".4"
+
+                            />
+
+                        <Button
+                            android:id="@+id/button7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="-8dp"
+                            android:layout_marginTop="65dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_money"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="Php 250 and Hour" />
+
+                        <Button
+                            android:id="@+id/button8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="125dp"
+                            android:layout_marginTop="65dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_money"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="Part time" />
+
+                        <Button
+                            android:id="@+id/button9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginTop="92dp"
+                            android:backgroundTint="#748D94"
+                            android:drawableLeft="@drawable/ic_back_in_time"
+                            android:scaleX=".6"
+                            android:scaleY=".6"
+                            android:text="Button" />
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="135dp"
+                            android:drawableLeft="@drawable/ic_support"
+                            android:text="Service Ongoing" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="42dp"
+                            android:layout_marginTop="165dp"
+                            android:drawableLeft="@drawable/ic_tick"
+                            android:text="Available"
+                            android:textColor="#2A9818" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/navigation_header_menu"
+        android:background="#e6e6e6"
+        />
+</androidx.drawerlayout.widget.DrawerLayout>

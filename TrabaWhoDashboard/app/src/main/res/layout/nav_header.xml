@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="#51577c"
+    >
+
+
+    <ImageView
+        android:id="@+id/navProfile"
+        android:layout_width="96dp"
+        android:layout_height="105dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp"
+        app:srcCompat="@drawable/user" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="-129dp"
+        android:autoSizeTextType="uniform"
+        android:text="John Doe"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
+
+    <TextView
+        android:layout_width="170dp"
+        android:layout_height="29dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="5dp"
+        android:autoSizeTextType="uniform"
+        android:text="john10doe@gmail.com"
+        >
+    </TextView>
+
+    <TextView
+        android:layout_width="170dp"
+        android:layout_height="29dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="5dp"
+        android:autoSizeTextType="uniform"
+        android:text="Baguio City"
+        >
+    </TextView>
+</LinearLayout>

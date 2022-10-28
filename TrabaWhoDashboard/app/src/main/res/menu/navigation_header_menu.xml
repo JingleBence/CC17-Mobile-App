@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="Navigation_view"
+    >
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/Home"
+            android:title="Home"
+            />
+
+        <item
+            android:id="@+id/Profile"
+            android:title="Profile"
+            />
+        <item
+            android:id="@+id/services"
+            android:title="Services"
+            />
+
+        <item
+            android:id="@+id/likes"
+            android:title="Likes"
+            />
+        <item
+            android:id="@+id/aboutus"
+            android:title="About Us"
+            />
+        <item
+            android:id="@+id/signout"
+            android:title="SignOut"
+            />
+
+    </group>
+
+</menu>
